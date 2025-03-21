@@ -1,7 +1,11 @@
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,6 +18,7 @@ import java.util.regex.Pattern;
  * @author Student
  */
 public class app extends javax.swing.JFrame {
+    DefaultTableModel dtm = new DefaultTableModel();
 
     /**
      * Creates new form app
@@ -52,7 +57,15 @@ public class app extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton8 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
@@ -228,28 +241,103 @@ public class app extends javax.swing.JFrame {
 
         jTabbedPane3.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
+        jLabel16.setText("<html>Вывести на экран матрицу 4x5. Определить номера столбцов, содержащих более половины положительных элементов.</html>");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jButton7.setText("Выполнить");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1147, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton7)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(519, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(jButton7)
+                .addGap(0, 266, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("23", jPanel7);
+
+        jLabel17.setText("<html>Сформировать матрицу вида g:</html>");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jButton8.setText("Выполнить");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1147, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(374, 374, 374)
+                        .addComponent(jButton8)))
+                .addContainerGap(684, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jButton8)
+                .addContainerGap(252, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("42j", jPanel8);
@@ -492,54 +580,111 @@ public class app extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-float x = 4.3f;
-        float y = 8.3f;
-        float z = 5.5f;
-        float result = x / y + z;
-        System.out.println ("Результат = " + result);
+System.out.println("");
+        int DAYS_IN_OCTOBER = 31;  // Константа, представляющая количество дней в октябре
+        int[] rainfall = new int[DAYS_IN_OCTOBER];
+        Random random = new Random();
+
+        for (int i = 0; i < DAYS_IN_OCTOBER; i++) {  // Заполняем массив случайными значениями от 0 до 80 включительно
+            rainfall[i] = random.nextInt(81);
+        }
+
+        System.out.print("Количество осадков за каждый день октября: "); // Выводим количество осадков за каждый день октября
+        for (int i = 0; i < DAYS_IN_OCTOBER; i++) {
+            System.out.print(rainfall[i] + " ");
+        }
+        System.out.println();
+
+        int count = 0;
+        for (int i = 0; i < DAYS_IN_OCTOBER; i++) { // Проходим по массиву и считаем дни, когда количество осадков не превышало 40
+            if (rainfall[i] <= 40) {
+                count++;
+            }
+        }
+
+        System.out.println("Количество дней, когда количество осадков не превышало 40: " + count);
 String str="";
-jTextField2.setText(result+"");
+jTextField2.setText(rainfall+"");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-int start = 10;
-int end = 86;
-long sum = 0;
-for (int i = start + 1; i <= end; i++) {
-    if (i % 2 == 0 && i % 3 == 0) {
-        sum += i;
+System.out.println("");
+        int[] a = new int[10]; // Создаем массивы a и b с заданными размерами
+        int[] b = new int[15];
+
+        double averageA = calculateOddAverage(a); // Вычисляем среднее арифметическое нечетных элементов для каждого массива
+        double averageB = calculateOddAverage(b);
+        jTextField3.setText(averageA+"");
+        
+                
+        System.out.println("Среднее арифметическое нечетных элементов массива a: " + averageA);
+        System.out.println("Среднее арифметическое нечетных элементов массива b: " + averageB);
     }
-}
-      System.out.println ("Результат = " + sum);
-      String str="";
-      jTextField3.setText(sum+"");
+
+    public static void fillArray(int[] array) { // Метод для заполнения массива случайными целыми числами от 1 до 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1;
+            String str="";
+        }
+    }
+
+    public static double calculateOddAverage(int[] array) {  // Метод для вычисления среднего арифметического нечетных элементов массива
+        int sum = 0;
+        int count = 0;
+
+        for (int value : array) {
+            if (value % 2 != 0) {
+                sum += value;
+                count++;
+
+            }
+        }
+
+        return (count > 0) ? (double) sum / count : 0;  // Возвращаем среднее арифметическое, если есть нечетные элементы, иначе возвращаем 0
+      
+      
       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-Scanner scanner = new Scanner(System.in);
+Scanner scanner = new Scanner(System.in); // Создаем объект Scanner для считывания ввода с консоли
 
-        System.out.print("Введите строку для преобразования: ");
-        String input = scanner.nextLine();
+        System.out.print("Введите строку для преобразования: "); // Запрашиваем у пользователя ввод строки
+        String input = scanner.nextLine(); 
 
-        StringBuilder digits = new StringBuilder();
-        StringBuilder letters = new StringBuilder();
+        StringBuilder digits = new StringBuilder(); // Создаем StringBuilder для хранения цифр и букв
+        StringBuilder letters = new StringBuilder(); 
 
-        for (char c : input.toCharArray()) {
-            if (Character.isDigit(c)) {
-                digits.append(c);
-            } else if (Character.isLetter(c)) {
-                letters.append(c);
+        for (char c : input.toCharArray()) { // Проходим по каждому символу введенной строки
+            if (Character.isDigit(c)) { 
+                digits.append(c); 
+            } else if (Character.isLetter(c)) {  // Проверяем, является ли символ буквой
+                letters.append(c); // 
             }
         }
 
-        System.out.println("Преобразованная строка: " + digits.toString() + letters.toString());        
+        System.out.println("Преобразованная строка: " + digits.toString() + letters.toString());      
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+Scanner scanner = new Scanner(System.in);  // Создаем объект Scanner для считывания ввода с консоли
 
+        System.out.print("Введите строку цифр для сортировки: "); // Запрашиваем у пользователя ввод строки цифр
+        String input = scanner.nextLine(); 
+
+        int[] digits = new int[input.length()]; // Создаем массив целых чисел для хранения цифр
+        for (int i = 0; i < input.length(); i++) {  
+            digits[i] = Character.getNumericValue(input.charAt(i)); 
+        }
+
+        Arrays.sort(digits); // Сортируем массив цифр в порядке возрастания
+
+        System.out.println("Отсортированная строка цифр: ");  // Выводим отсортированную строку цифр
+        for (int digit : digits) {
+            System.out.print(digit);
+    }//GEN-LAST:event_jButton4ActionPerformed
+    }
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 Scanner scanner = new Scanner(System.in);
 
@@ -571,6 +716,82 @@ Scanner scanner = new Scanner(System.in);
         matcher.appendTail(stringBuffer);
         return stringBuffer.toString();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+System.out.println("");
+        int rows = 4;    // Определяем количество строк и столбцов матрицы
+        int cols = 5;
+        int[][] matrix = new int[rows][cols];
+        Random random = new Random();
+      dtm = (DefaultTableModel) jTable1.getModel(); 
+        dtm.setRowCount(4);
+        dtm.setColumnCount(5);
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = random.nextInt(21) - 10;
+                dtm.setValueAt(matrix[i][j],i,j);
+                        
+            }
+        }
+
+        System.out.println("Сгенерированная матрица:"); // Выводим сгенерированную матрицу на экран
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nНомера столбцов с более чем половиной положительных элементов:");
+        for (int j = 0; j < cols; j++) {  // Заполняем матрицу случайными целыми числами в диапазоне от -10 до 10
+            int positiveCount = 0;
+            for (int i = 0; i < rows; i++) {
+                if (matrix[i][j] > 0) {
+                    positiveCount++;
+                }
+            }
+            if (positiveCount > rows / 2) { // Проверяем, превышает ли количество положительных элементов половину количества строк
+                System.out.println("Столбец " + (j + 1) + ": " + positiveCount + " положительных элементов");
+            String str="";
+          
+                    
+            }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+int rows = 5;
+
+        System.out.println("");
+        int cols = 5;
+        int[][] matrix = new int[rows][cols]; // создаёт матрицы
+        dtm = (DefaultTableModel) jTable2.getModel(); 
+        dtm.setRowCount(5);
+        dtm.setColumnCount(5);
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (j == 0) {
+                    matrix[i][j] = i + 1;
+                } else if (j == cols - 1) {
+                    matrix[i][j] = rows - i;
+                } else {
+                    matrix[i][j] = 0;
+                    
+                }
+            }
+        }
+
+        System.out.println("Сформированная матрица:"); // вывод сформированной матрицы
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -614,6 +835,8 @@ Scanner scanner = new Scanner(System.in);
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -621,6 +844,8 @@ Scanner scanner = new Scanner(System.in);
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -644,10 +869,14 @@ Scanner scanner = new Scanner(System.in);
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
